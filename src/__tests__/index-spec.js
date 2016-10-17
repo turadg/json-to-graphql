@@ -1389,12 +1389,21 @@ const hugeJson = {
   }
 };
 
-describe('createSchemaFromJSON', function() {
+describe('default', function() {
+	it('targets graphqljs', function() {
+		const json = simpleJson;
+		const defaultOutput = createSchemaFromJSON(json);
+		const graphqljsOutput = createSchemaFromJSON(json, 'graphqljs');
+		expect(defaultOutput).toEqual(graphqljsOutput);
+	});
+});
+
+describe('graphqljs', function() {
 	it('handles simple json', function() {
-		expect(createSchemaFromJSON(simpleJson)).toMatchSnapshot();
+		expect(createSchemaFromJSON(simpleJson, 'graphqljs')).toMatchSnapshot();
 	});
 
 	it('handles huge json', function() {
-		expect(createSchemaFromJSON(hugeJson)).toMatchSnapshot();
+		expect(createSchemaFromJSON(hugeJson, 'graphqljs')).toMatchSnapshot();
 	});
 });

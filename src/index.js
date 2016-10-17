@@ -56,14 +56,13 @@ const NativeBooleanType: NativeType = 'boolean';
 const NativeUndefinedType: NativeType = 'undefined';
 
 const targets = require('./targets');
-// Set by createGraphQLSchema before being read.
+
 // TODO refactor away this global state.
 let target; 
-
-const types = [];
-const customTypeMap = {};
-const rootTypes = []
-const fields = []
+let types = [];
+let customTypeMap = {};
+let rootTypes = []
+let fields = []
 
 function isCustomGraphQLType(type: GraphQLType): boolean {
   return !(
@@ -371,15 +370,21 @@ function createRootSchema(AST) {
   return beautify(root)
 }
 
+function resetGlobals(targetName: string) {
+  target = targets[targetName]
+  types = []
+  customTypeMap = {}
+  rootTypes = []
+  fields = []
+}
 
 function createGraphQLSchema(json: Object | Array<Object>, targetName: string = 'graphqljs') {
-  target = targets[targetName];
+  resetGlobals(targetName);
 
   const typeTokenAST = buildTypeTokenAST(json)
   const tokenMap = applyTypeWrappers(typeTokenAST)
   const schema = createSchemasFromTokenMap(tokenMap)
   return createRootSchema(schema)
 }
-
 
 module.exports = createGraphQLSchema

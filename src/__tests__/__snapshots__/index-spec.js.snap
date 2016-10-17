@@ -1,4 +1,4 @@
-exports[`createSchemaFromJSON handles huge json 1`] = `
+exports[`graphqljs handles huge json 1`] = `
 "const {
     GraphQLBoolean,
     GraphQLString,
@@ -9,25 +9,6 @@ exports[`createSchemaFromJSON handles huge json 1`] = `
     GraphQLID,
     GraphQLNonNull
 } = require(\'graphql\')
-
-
-const JobType = new GraphQLObjectType({
-    name: \'job\',
-    fields: {
-        type: {
-            description: \'enter your description\',
-            type: new GraphQLNonNull(GraphQLString),
-            // TODO: Implement resolver for type
-            resolve: () => null,
-        },
-        years: {
-            description: \'enter your description\',
-            type: new GraphQLNonNull(GraphQLInt),
-            // TODO: Implement resolver for years
-            resolve: () => null,
-        }
-    },
-});
 
 
 const ActivitiesType = new GraphQLObjectType({
@@ -1933,48 +1914,6 @@ module.exports = new GraphQLSchema({
     query: new GraphQLObjectType({
         name: \'RootQueryType\',
         fields: () => ({
-            name: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(GraphQLString),
-                // TODO: Implement resolver for name
-                resolve: () => null,
-            },
-            id: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(GraphQLID),
-                // TODO: Implement resolver for id
-                resolve: () => null,
-            },
-            favorite_color: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(GraphQLString),
-                // TODO: Implement resolver for favorite_color
-                resolve: () => null,
-            },
-            type: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(GraphQLString),
-                // TODO: Implement resolver for type
-                resolve: () => null,
-            },
-            years: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(GraphQLInt),
-                // TODO: Implement resolver for years
-                resolve: () => null,
-            },
-            job: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(JobType),
-                // TODO: Implement resolver for job
-                resolve: () => null,
-            },
-            dogs: {
-                description: \'enter your description\',
-                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
-                // TODO: Implement resolver for dogs
-                resolve: () => null,
-            },
             disable_replies_limit: {
                 description: \'enter your description\',
                 type: new GraphQLNonNull(GraphQLInt),
@@ -3564,7 +3503,7 @@ module.exports = new GraphQLSchema({
 })"
 `;
 
-exports[`createSchemaFromJSON handles simple json 1`] = `
+exports[`graphqljs handles simple json 1`] = `
 "const {
     GraphQLBoolean,
     GraphQLString,
