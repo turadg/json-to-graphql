@@ -55,15 +55,10 @@ const NativeNumberType: NativeType = 'number';
 const NativeBooleanType: NativeType = 'boolean';
 const NativeUndefinedType: NativeType = 'undefined';
 
-const {
-  schemaTemplate,
-  typeTemplate,
-  scalarTypeTemplate,
-  scalarTypeTemplateWithoutResolve,
-  objectTypeTemplate,
-  queryTemplateWithArgs,
-} = require('./templates');
-
+const targets = require('./targets');
+// Set by createGraphQLSchema before being read.
+// TODO refactor away this global state.
+let target; 
 
 const types = [];
 const customTypeMap = {};
@@ -326,6 +321,8 @@ function applyTypeWrappers(tokens: TypeTokenMap): TypeTokenMap {
 }
 
 function createSchemasFromTokenMap(tokenMap: TypeTokenMap) {
+  const {scalarTypeTemplate, typeTemplate} = target;
+
   const types = []
   for (let key in tokenMap) {
     const token: TypeToken = tokenMap[key]
@@ -349,6 +346,7 @@ function createSchemasFromTokenMap(tokenMap: TypeTokenMap) {
 }
 
 function mapFieldsToScalarTemplate(fields) {
+  const {scalarTypeTemplate} = target;
   const types = []
   for (let key in fields) {
     const field = fields[key]
@@ -368,12 +366,15 @@ function createRootSchema(AST) {
     }
     fields.push(schema.schema)
   }
+  const {schemaTemplate} = target;
   const root = schemaTemplate(fields.join(','), rootTypes)
   return beautify(root)
 }
 
 
-function createGraphQLSchema(json: Object | Array<Object>) {
+function createGraphQLSchema(json: Object | Array<Object>, targetName: string = 'graphqljs') {
+  target = targets[targetName];
+
   const typeTokenAST = buildTypeTokenAST(json)
   const tokenMap = applyTypeWrappers(typeTokenAST)
   const schema = createSchemasFromTokenMap(tokenMap)
