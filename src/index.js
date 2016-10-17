@@ -2,7 +2,6 @@
 'use strict';
 const fs = require('fs');
 const fetch = require('node-fetch');
-const beautify = require('js-beautify');
 import invariant from 'invariant';
 
 export type NativeType = string;
@@ -28,19 +27,19 @@ export type TypeToken = {
 }
 
 const GraphQLSchema: GraphQLType = 'GraphQLSchema';
-const GraphQLObjectType: GraphQLType = 'GraphQLObjectType';
+const GraphQLObjectType: GraphQLType = 'GraphQL::ObjectType';
 
 /* GraphQL Scalars */
-const GraphQLInt: GraphQLType = 'GraphQLInt';
-const GraphQLFloat: GraphQLType = 'GraphQLFloat';
-const GraphQLString: GraphQLType = 'GraphQLString';
-const GraphQLBoolean: GraphQLType = 'GraphQLBoolean';
-const GraphQLID: GraphQLType = 'GraphQLID';
+const GraphQLInt: GraphQLType = 'types.Int';
+const GraphQLFloat: GraphQLType = 'types.Float';
+const GraphQLString: GraphQLType = 'types.String';
+const GraphQLBoolean: GraphQLType = 'types.Boolean';
+const GraphQLID: GraphQLType = 'types.ID';
 
 /* Wrapping types */
 
 function GraphQLNonNull(type: GraphQLType): GraphQLType {
-  return `new GraphQLNonNull(${type})`
+  return `!${type}`
 }
 
 function GraphQLList(type: GraphQLType): GraphQLType {
@@ -366,8 +365,7 @@ function createRootSchema(AST) {
     fields.push(schema.schema)
   }
   const {schemaTemplate} = target;
-  const root = schemaTemplate(fields.join(','), rootTypes)
-  return beautify(root)
+  return schemaTemplate(fields.join(','), rootTypes)
 }
 
 function resetGlobals(targetName: string) {

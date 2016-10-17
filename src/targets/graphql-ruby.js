@@ -1,24 +1,8 @@
 
 const schemaTemplate = (fields, types) => `
-const {
-  GraphQLBoolean,
-  GraphQLString,
-  GraphQLInt,
-  GraphQLFloat,
-  GraphQLObjectType,
-  GraphQLSchema,
-  GraphQLID,
-  GraphQLNonNull
-} = require('graphql')
-
+require_relative "../find_loader"
+require_relative "../foreign_key_loader"
 ${types.join('\n')}
-
-module.exports = new GraphQLSchema({
-  query: new GraphQLObjectType({
-    name: 'RootQueryType',
-    fields: () => ({${fields}})
-  })
-})
 `
 
 const queryTemplateWithArgs = (
@@ -35,20 +19,23 @@ const queryTemplateWithArgs = (
 `
 
 const typeTemplate = (type, name, fields) => `
-${type} = new GraphQLObjectType({
-  name: '${name}',
-  fields: {${fields}},
-});
+${type} = GraphQL::ObjectType.define do
+  name "${name}"
+  description "???"
+
+  ${fields}
+end
 `
 
 const scalarTypeTemplate = (name, type) => {
   return `
-    ${name}: {
-      description: 'enter your description',
-      type: ${type},
-      // TODO: Implement resolver for ${name}
-      resolve: () => null,
+  field :${name} do
+    description "???"
+    type types[${type}]
+    resolve -> (obj, args, ctx) {
+      # TODO: Implement resolver for ${name}
     }
+  end
   `
 }
 
