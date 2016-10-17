@@ -1,3 +1,4 @@
 module.exports = {
-	graphqljs: require('./graphqljs'),
+	'graphql-js': require('./graphql-js'),
+	'graphql-ruby': require('./graphql-ruby'),
 };

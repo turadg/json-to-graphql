@@ -1,4 +1,4 @@
-exports[`graphqljs handles huge json 1`] = `
+exports[`graphql-js handles huge json 1`] = `
 "const {
     GraphQLBoolean,
     GraphQLString,
@@ -3503,7 +3503,7 @@ module.exports = new GraphQLSchema({
 })"
 `;
 
-exports[`graphqljs handles simple json 1`] = `
+exports[`graphql-js handles simple json 1`] = `
 "const {
     GraphQLBoolean,
     GraphQLString,
@@ -3517,6 +3517,3594 @@ exports[`graphqljs handles simple json 1`] = `
 
 
 const JobType = new GraphQLObjectType({
+    name: \'job\',
+    fields: {
+        type: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for type
+            resolve: () => null,
+        },
+        years: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for years
+            resolve: () => null,
+        }
+    },
+});
+
+
+module.exports = new GraphQLSchema({
+    query: new GraphQLObjectType({
+        name: \'RootQueryType\',
+        fields: () => ({
+            name: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for name
+                resolve: () => null,
+            },
+            id: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLID),
+                // TODO: Implement resolver for id
+                resolve: () => null,
+            },
+            favorite_color: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for favorite_color
+                resolve: () => null,
+            },
+            type: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for type
+                resolve: () => null,
+            },
+            years: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for years
+                resolve: () => null,
+            },
+            job: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(JobType),
+                // TODO: Implement resolver for job
+                resolve: () => null,
+            },
+            dogs: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+                // TODO: Implement resolver for dogs
+                resolve: () => null,
+            }
+        })
+    })
+})"
+`;
+
+exports[`graphql-ruby handles huge json 1`] = `
+"const {
+    GraphQLBoolean,
+    GraphQLString,
+    GraphQLInt,
+    GraphQLFloat,
+    GraphQLObjectType,
+    GraphQLSchema,
+    GraphQLID,
+    GraphQLNonNull
+} = require(\'graphql\')
+
+
+ActivitiesType = new GraphQLObjectType({
+    name: \'activities\',
+    fields: {
+        members: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(ActivitiesMembersType),
+            // TODO: Implement resolver for members
+            resolve: () => null,
+        }
+    },
+});
+
+
+ActivitiesMembersType = new GraphQLObjectType({
+    name: \'members\',
+    fields: {
+        disable_replies_limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for disable_replies_limit
+            resolve: () => null,
+        },
+        creation_limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for creation_limit
+            resolve: () => null,
+        },
+        limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit
+            resolve: () => null,
+        }
+    },
+});
+
+
+PrivacyType = new GraphQLObjectType({
+    name: \'privacy\',
+    fields: {
+        image_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for image_url
+            resolve: () => null,
+        },
+        policy_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for policy_url
+            resolve: () => null,
+        }
+    },
+});
+
+
+UsersType = new GraphQLObjectType({
+    name: \'users\',
+    fields: {
+        emailregexp: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for emailregexp
+            resolve: () => null,
+        },
+        minimum_age: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for minimum_age
+            resolve: () => null,
+        },
+        maximum_age: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for maximum_age
+            resolve: () => null,
+        },
+        activated: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(UsersActivatedType),
+            // TODO: Implement resolver for activated
+            resolve: () => null,
+        }
+    },
+});
+
+
+UsersActivatedType = new GraphQLObjectType({
+    name: \'activated\',
+    fields: {
+        recipients_for_message: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for recipients_for_message
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingType = new GraphQLObjectType({
+    name: \'sharing\',
+    fields: {
+        email: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(SharingEmailType),
+            // TODO: Implement resolver for email
+            resolve: () => null,
+        },
+        postpone_invite_banner_for: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for postpone_invite_banner_for
+            resolve: () => null,
+        },
+        facebook: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(SharingFacebookType),
+            // TODO: Implement resolver for facebook
+            resolve: () => null,
+        },
+        twitter: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(SharingTwitterType),
+            // TODO: Implement resolver for twitter
+            resolve: () => null,
+        },
+        pinterest: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(SharingPinterestType),
+            // TODO: Implement resolver for pinterest
+            resolve: () => null,
+        },
+        sms: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(SharingSmsType),
+            // TODO: Implement resolver for sms
+            resolve: () => null,
+        },
+        whatsapp: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(SharingWhatsappType),
+            // TODO: Implement resolver for whatsapp
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingEmailType = new GraphQLObjectType({
+    name: \'email\',
+    fields: {
+        bcc: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bcc
+            resolve: () => null,
+        },
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailTeacherType),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        },
+        student: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailStudentType),
+            // TODO: Implement resolver for student
+            resolve: () => null,
+        },
+        parent: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailParentType),
+            // TODO: Implement resolver for parent
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        html: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for html
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailTeacherType = new GraphQLObjectType({
+    name: \'teacher\',
+    fields: {
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(TeacherBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        },
+        bcc: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bcc
+            resolve: () => null,
+        }
+    },
+});
+
+
+TeacherBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        html: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for html
+            resolve: () => null,
+        },
+        text: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for text
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailStudentType = new GraphQLObjectType({
+    name: \'student\',
+    fields: {
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(StudentBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        },
+        bcc: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bcc
+            resolve: () => null,
+        }
+    },
+});
+
+
+StudentBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        html: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for html
+            resolve: () => null,
+        },
+        text: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for text
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailParentType = new GraphQLObjectType({
+    name: \'parent\',
+    fields: {
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(ParentBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        },
+        bcc: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bcc
+            resolve: () => null,
+        }
+    },
+});
+
+
+ParentBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        html: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for html
+            resolve: () => null,
+        },
+        text: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for text
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingFacebookType = new GraphQLObjectType({
+    name: \'facebook\',
+    fields: {
+        student: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student
+            resolve: () => null,
+        },
+        student_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student_url
+            resolve: () => null,
+        },
+        parent: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent
+            resolve: () => null,
+        },
+        parent_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent_url
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        },
+        teacher_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher_url
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingTwitterType = new GraphQLObjectType({
+    name: \'twitter\',
+    fields: {
+        student: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student
+            resolve: () => null,
+        },
+        parent: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingPinterestType = new GraphQLObjectType({
+    name: \'pinterest\',
+    fields: {
+        image: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for image
+            resolve: () => null,
+        },
+        student: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student
+            resolve: () => null,
+        },
+        student_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student_url
+            resolve: () => null,
+        },
+        parent: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent
+            resolve: () => null,
+        },
+        parent_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent_url
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        },
+        teacher_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher_url
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingSmsType = new GraphQLObjectType({
+    name: \'sms\',
+    fields: {
+        student: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student
+            resolve: () => null,
+        },
+        parent: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+SharingWhatsappType = new GraphQLObjectType({
+    name: \'whatsapp\',
+    fields: {
+        student: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for student
+            resolve: () => null,
+        },
+        parent: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for parent
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+InviteType = new GraphQLObjectType({
+    name: \'invite\',
+    fields: {
+        email: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(InviteEmailType),
+            // TODO: Implement resolver for email
+            resolve: () => null,
+        },
+        url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for url
+            resolve: () => null,
+        },
+        facebook: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(InviteFacebookType),
+            // TODO: Implement resolver for facebook
+            resolve: () => null,
+        },
+        twitter: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(InviteTwitterType),
+            // TODO: Implement resolver for twitter
+            resolve: () => null,
+        },
+        sms: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(InviteSmsType),
+            // TODO: Implement resolver for sms
+            resolve: () => null,
+        }
+    },
+});
+
+
+InviteEmailType = new GraphQLObjectType({
+    name: \'email\',
+    fields: {
+        bcc: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bcc
+            resolve: () => null,
+        },
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        },
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailTeacherType),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        text: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for text
+            resolve: () => null,
+        },
+        html: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for html
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailTeacherType = new GraphQLObjectType({
+    name: \'teacher\',
+    fields: {
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(TeacherBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        },
+        bcc: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bcc
+            resolve: () => null,
+        }
+    },
+});
+
+
+TeacherBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        text: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for text
+            resolve: () => null,
+        },
+        html: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for html
+            resolve: () => null,
+        }
+    },
+});
+
+
+InviteFacebookType = new GraphQLObjectType({
+    name: \'facebook\',
+    fields: {
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+InviteTwitterType = new GraphQLObjectType({
+    name: \'twitter\',
+    fields: {
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+InviteSmsType = new GraphQLObjectType({
+    name: \'sms\',
+    fields: {
+        teacher: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for teacher
+            resolve: () => null,
+        }
+    },
+});
+
+
+GroupsType = new GraphQLObjectType({
+    name: \'groups\',
+    fields: {
+        limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit
+            resolve: () => null,
+        },
+        name_regex: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for name_regex
+            resolve: () => null,
+        },
+        owners_limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for owners_limit
+            resolve: () => null,
+        }
+    },
+});
+
+
+ChatsType = new GraphQLObjectType({
+    name: \'chats\',
+    fields: {
+        members: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(ChatsMembersType),
+            // TODO: Implement resolver for members
+            resolve: () => null,
+        },
+        search: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(ChatsSearchType),
+            // TODO: Implement resolver for search
+            resolve: () => null,
+        }
+    },
+});
+
+
+ChatsMembersType = new GraphQLObjectType({
+    name: \'members\',
+    fields: {
+        limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit
+            resolve: () => null,
+        }
+    },
+});
+
+
+ChatsSearchType = new GraphQLObjectType({
+    name: \'search\',
+    fields: {
+        page_size: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for page_size
+            resolve: () => null,
+        },
+        recommended_page_size: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for recommended_page_size
+            resolve: () => null,
+        }
+    },
+});
+
+
+PaymentType = new GraphQLObjectType({
+    name: \'payment\',
+    fields: {
+        amount_per_person: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(PaymentAmountPerPersonType),
+            // TODO: Implement resolver for amount_per_person
+            resolve: () => null,
+        },
+        stripe: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(PaymentStripeType),
+            // TODO: Implement resolver for stripe
+            resolve: () => null,
+        }
+    },
+});
+
+
+PaymentAmountPerPersonType = new GraphQLObjectType({
+    name: \'amount_per_person\',
+    fields: {
+        min: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for min
+            resolve: () => null,
+        },
+        max: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for max
+            resolve: () => null,
+        }
+    },
+});
+
+
+PaymentStripeType = new GraphQLObjectType({
+    name: \'stripe\',
+    fields: {
+        publishable_key: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for publishable_key
+            resolve: () => null,
+        }
+    },
+});
+
+
+MessagesType = new GraphQLObjectType({
+    name: \'messages\',
+    fields: {
+        characters: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(MessagesCharactersType),
+            // TODO: Implement resolver for characters
+            resolve: () => null,
+        },
+        files: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(MessagesFilesType),
+            // TODO: Implement resolver for files
+            resolve: () => null,
+        },
+        timing: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(MessagesTimingType),
+            // TODO: Implement resolver for timing
+            resolve: () => null,
+        },
+        timeout: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for timeout
+            resolve: () => null,
+        }
+    },
+});
+
+
+MessagesCharactersType = new GraphQLObjectType({
+    name: \'characters\',
+    fields: {
+        long_limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for long_limit
+            resolve: () => null,
+        },
+        long_limit_with_files: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for long_limit_with_files
+            resolve: () => null,
+        },
+        preview_length: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for preview_length
+            resolve: () => null,
+        },
+        preview_link_length: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for preview_link_length
+            resolve: () => null,
+        },
+        soft_limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for soft_limit
+            resolve: () => null,
+        },
+        soft_limit_with_files: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for soft_limit_with_files
+            resolve: () => null,
+        },
+        limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit
+            resolve: () => null,
+        },
+        limit_with_files: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit_with_files
+            resolve: () => null,
+        },
+        limit_push_only: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit_push_only
+            resolve: () => null,
+        },
+        urlweight: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for urlweight
+            resolve: () => null,
+        },
+        stamp_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for stamp_url
+            resolve: () => null,
+        },
+        long_message_incentive_url: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for long_message_incentive_url
+            resolve: () => null,
+        },
+        urlregexp: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for urlregexp
+            resolve: () => null,
+        }
+    },
+});
+
+
+MessagesFilesType = new GraphQLObjectType({
+    name: \'files\',
+    fields: {
+        limit: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for limit
+            resolve: () => null,
+        }
+    },
+});
+
+
+MessagesTimingType = new GraphQLObjectType({
+    name: \'timing\',
+    fields: {
+        weekday: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(TimingWeekdayType),
+            // TODO: Implement resolver for weekday
+            resolve: () => null,
+        },
+        weekend: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(TimingWeekendType),
+            // TODO: Implement resolver for weekend
+            resolve: () => null,
+        }
+    },
+});
+
+
+TimingWeekdayType = new GraphQLObjectType({
+    name: \'weekday\',
+    fields: {
+        early: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for early
+            resolve: () => null,
+        },
+        late: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for late
+            resolve: () => null,
+        }
+    },
+});
+
+
+TimingWeekendType = new GraphQLObjectType({
+    name: \'weekend\',
+    fields: {
+        early: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for early
+            resolve: () => null,
+        },
+        late: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for late
+            resolve: () => null,
+        }
+    },
+});
+
+
+TymkType = new GraphQLObjectType({
+    name: \'tymk\',
+    fields: {
+        supported_countries: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+            // TODO: Implement resolver for supported_countries
+            resolve: () => null,
+        },
+        real_time_invite_batch_period_days: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for real_time_invite_batch_period_days
+            resolve: () => null,
+        }
+    },
+});
+
+
+ManualInviteType = new GraphQLObjectType({
+    name: \'manual_invite\',
+    fields: {
+        unsupported_countries: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(null)),
+            // TODO: Implement resolver for unsupported_countries
+            resolve: () => null,
+        },
+        unsupported_emails: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(null)),
+            // TODO: Implement resolver for unsupported_emails
+            resolve: () => null,
+        },
+        unsupported_area_codes: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(null)),
+            // TODO: Implement resolver for unsupported_area_codes
+            resolve: () => null,
+        }
+    },
+});
+
+
+DirectAddType = new GraphQLObjectType({
+    name: \'direct_add\',
+    fields: {
+        unsupported_countries: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+            // TODO: Implement resolver for unsupported_countries
+            resolve: () => null,
+        },
+        unsupported_emails: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+            // TODO: Implement resolver for unsupported_emails
+            resolve: () => null,
+        },
+        unsupported_area_codes: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(GraphQLInt)),
+            // TODO: Implement resolver for unsupported_area_codes
+            resolve: () => null,
+        }
+    },
+});
+
+
+OrganizationsType = new GraphQLObjectType({
+    name: \'organizations\',
+    fields: {
+        minimum_name_query_length: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for minimum_name_query_length
+            resolve: () => null,
+        },
+        picker: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(OrganizationsPickerType),
+            // TODO: Implement resolver for picker
+            resolve: () => null,
+        }
+    },
+});
+
+
+OrganizationsPickerType = new GraphQLObjectType({
+    name: \'picker\',
+    fields: {
+        allowed_country_codes: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+            // TODO: Implement resolver for allowed_country_codes
+            resolve: () => null,
+        }
+    },
+});
+
+
+DevicesType = new GraphQLObjectType({
+    name: \'devices\',
+    fields: {
+        sms: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(DevicesSmsType),
+            // TODO: Implement resolver for sms
+            resolve: () => null,
+        },
+        email: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(DevicesEmailType),
+            // TODO: Implement resolver for email
+            resolve: () => null,
+        }
+    },
+});
+
+
+DevicesSmsType = new GraphQLObjectType({
+    name: \'sms\',
+    fields: {
+        verification_timeout: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for verification_timeout
+            resolve: () => null,
+        }
+    },
+});
+
+
+DevicesEmailType = new GraphQLObjectType({
+    name: \'email\',
+    fields: {
+        blacklisted_domains: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+            // TODO: Implement resolver for blacklisted_domains
+            resolve: () => null,
+        }
+    },
+});
+
+
+CountriesType = new GraphQLObjectType({
+    name: \'countries\',
+    fields: {
+        name: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for name
+            resolve: () => null,
+        },
+        code: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for code
+            resolve: () => null,
+        }
+    },
+});
+
+
+PusherType = new GraphQLObjectType({
+    name: \'pusher\',
+    fields: {
+        cluster: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for cluster
+            resolve: () => null,
+        },
+        key: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for key
+            resolve: () => null,
+        }
+    },
+});
+
+
+GroupType = new GraphQLObjectType({
+    name: \'group\',
+    fields: {
+        class_name: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GroupClassNameType),
+            // TODO: Implement resolver for class_name
+            resolve: () => null,
+        },
+        name: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GroupNameType),
+            // TODO: Implement resolver for name
+            resolve: () => null,
+        }
+    },
+});
+
+
+GroupClassNameType = new GraphQLObjectType({
+    name: \'class_name\',
+    fields: {
+        length: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(Class_nameLengthType),
+            // TODO: Implement resolver for length
+            resolve: () => null,
+        }
+    },
+});
+
+
+Class_nameLengthType = new GraphQLObjectType({
+    name: \'length\',
+    fields: {
+        min: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for min
+            resolve: () => null,
+        },
+        max: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for max
+            resolve: () => null,
+        }
+    },
+});
+
+
+GroupNameType = new GraphQLObjectType({
+    name: \'name\',
+    fields: {
+        length: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(NameLengthType),
+            // TODO: Implement resolver for length
+            resolve: () => null,
+        }
+    },
+});
+
+
+NameLengthType = new GraphQLObjectType({
+    name: \'length\',
+    fields: {
+        min: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for min
+            resolve: () => null,
+        },
+        max: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLInt),
+            // TODO: Implement resolver for max
+            resolve: () => null,
+        }
+    },
+});
+
+
+SignupTutorialType = new GraphQLObjectType({
+    name: \'signup_tutorial\',
+    fields: {
+        sms: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sms
+            resolve: () => null,
+        },
+        email: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(Signup_tutorialEmailType),
+            // TODO: Implement resolver for email
+            resolve: () => null,
+        }
+    },
+});
+
+
+Signup_tutorialEmailType = new GraphQLObjectType({
+    name: \'email\',
+    fields: {
+        subject: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for subject
+            resolve: () => null,
+        },
+        body: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(EmailBodyType),
+            // TODO: Implement resolver for body
+            resolve: () => null,
+        }
+    },
+});
+
+
+EmailBodyType = new GraphQLObjectType({
+    name: \'body\',
+    fields: {
+        text: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for text
+            resolve: () => null,
+        }
+    },
+});
+
+
+LanguagesType = new GraphQLObjectType({
+    name: \'languages\',
+    fields: {
+        primary: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(LanguagesPrimaryType),
+            // TODO: Implement resolver for primary
+            resolve: () => null,
+        },
+        secondary: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(LanguagesSecondaryType),
+            // TODO: Implement resolver for secondary
+            resolve: () => null,
+        }
+    },
+});
+
+
+LanguagesPrimaryType = new GraphQLObjectType({
+    name: \'primary\',
+    fields: {
+        en: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for en
+            resolve: () => null,
+        },
+        es: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for es
+            resolve: () => null,
+        },
+        zh: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for zh
+            resolve: () => null,
+        },
+        fr: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for fr
+            resolve: () => null,
+        },
+        pt: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for pt
+            resolve: () => null,
+        }
+    },
+});
+
+
+LanguagesSecondaryType = new GraphQLObjectType({
+    name: \'secondary\',
+    fields: {
+        af: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for af
+            resolve: () => null,
+        },
+        sq: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sq
+            resolve: () => null,
+        },
+        ar: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ar
+            resolve: () => null,
+        },
+        hy: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for hy
+            resolve: () => null,
+        },
+        az: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for az
+            resolve: () => null,
+        },
+        eu: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for eu
+            resolve: () => null,
+        },
+        be: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for be
+            resolve: () => null,
+        },
+        bn: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bn
+            resolve: () => null,
+        },
+        bs: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bs
+            resolve: () => null,
+        },
+        bg: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for bg
+            resolve: () => null,
+        },
+        ca: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ca
+            resolve: () => null,
+        },
+        ny: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ny
+            resolve: () => null,
+        },
+        zh: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for zh
+            resolve: () => null,
+        },
+        hr: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for hr
+            resolve: () => null,
+        },
+        cs: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for cs
+            resolve: () => null,
+        },
+        da: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for da
+            resolve: () => null,
+        },
+        nl: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for nl
+            resolve: () => null,
+        },
+        en: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for en
+            resolve: () => null,
+        },
+        eo: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for eo
+            resolve: () => null,
+        },
+        et: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for et
+            resolve: () => null,
+        },
+        tl: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for tl
+            resolve: () => null,
+        },
+        fi: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for fi
+            resolve: () => null,
+        },
+        fr: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for fr
+            resolve: () => null,
+        },
+        gl: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for gl
+            resolve: () => null,
+        },
+        ka: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ka
+            resolve: () => null,
+        },
+        de: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for de
+            resolve: () => null,
+        },
+        el: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for el
+            resolve: () => null,
+        },
+        gu: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for gu
+            resolve: () => null,
+        },
+        ht: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ht
+            resolve: () => null,
+        },
+        ha: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ha
+            resolve: () => null,
+        },
+        he: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for he
+            resolve: () => null,
+        },
+        hi: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for hi
+            resolve: () => null,
+        },
+        hu: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for hu
+            resolve: () => null,
+        },
+        is: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for is
+            resolve: () => null,
+        },
+        id: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLID),
+            // TODO: Implement resolver for id
+            resolve: () => null,
+        },
+        ga: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ga
+            resolve: () => null,
+        },
+        it: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for it
+            resolve: () => null,
+        },
+        ja: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ja
+            resolve: () => null,
+        },
+        jv: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for jv
+            resolve: () => null,
+        },
+        kn: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for kn
+            resolve: () => null,
+        },
+        kk: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for kk
+            resolve: () => null,
+        },
+        km: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for km
+            resolve: () => null,
+        },
+        ko: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ko
+            resolve: () => null,
+        },
+        la: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for la
+            resolve: () => null,
+        },
+        lo: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for lo
+            resolve: () => null,
+        },
+        lt: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for lt
+            resolve: () => null,
+        },
+        lv: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for lv
+            resolve: () => null,
+        },
+        mk: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for mk
+            resolve: () => null,
+        },
+        mg: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for mg
+            resolve: () => null,
+        },
+        ms: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ms
+            resolve: () => null,
+        },
+        ml: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ml
+            resolve: () => null,
+        },
+        mt: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for mt
+            resolve: () => null,
+        },
+        mi: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for mi
+            resolve: () => null,
+        },
+        mr: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for mr
+            resolve: () => null,
+        },
+        mn: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for mn
+            resolve: () => null,
+        },
+        ne: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ne
+            resolve: () => null,
+        },
+        no: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for no
+            resolve: () => null,
+        },
+        fa: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for fa
+            resolve: () => null,
+        },
+        pl: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for pl
+            resolve: () => null,
+        },
+        pt: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for pt
+            resolve: () => null,
+        },
+        ro: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ro
+            resolve: () => null,
+        },
+        ru: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ru
+            resolve: () => null,
+        },
+        sr: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sr
+            resolve: () => null,
+        },
+        si: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for si
+            resolve: () => null,
+        },
+        sk: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sk
+            resolve: () => null,
+        },
+        sl: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sl
+            resolve: () => null,
+        },
+        so: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for so
+            resolve: () => null,
+        },
+        es: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for es
+            resolve: () => null,
+        },
+        su: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for su
+            resolve: () => null,
+        },
+        sw: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sw
+            resolve: () => null,
+        },
+        sv: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for sv
+            resolve: () => null,
+        },
+        tg: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for tg
+            resolve: () => null,
+        },
+        ta: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ta
+            resolve: () => null,
+        },
+        te: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for te
+            resolve: () => null,
+        },
+        th: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for th
+            resolve: () => null,
+        },
+        tr: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for tr
+            resolve: () => null,
+        },
+        uk: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for uk
+            resolve: () => null,
+        },
+        ur: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for ur
+            resolve: () => null,
+        },
+        uz: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for uz
+            resolve: () => null,
+        },
+        vi: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for vi
+            resolve: () => null,
+        },
+        cy: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for cy
+            resolve: () => null,
+        },
+        yi: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for yi
+            resolve: () => null,
+        },
+        yo: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for yo
+            resolve: () => null,
+        },
+        zu: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for zu
+            resolve: () => null,
+        }
+    },
+});
+
+
+ComposerType = new GraphQLObjectType({
+    name: \'composer\',
+    fields: {
+        activity_regex: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for activity_regex
+            resolve: () => null,
+        }
+    },
+});
+
+
+ServicesType = new GraphQLObjectType({
+    name: \'services\',
+    fields: {
+        batphone: {
+            description: \'enter your description\',
+            type: new GraphQLNonNull(GraphQLString),
+            // TODO: Implement resolver for batphone
+            resolve: () => null,
+        }
+    },
+});
+
+
+module.exports = new GraphQLSchema({
+    query: new GraphQLObjectType({
+        name: \'RootQueryType\',
+        fields: () => ({
+            disable_replies_limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for disable_replies_limit
+                resolve: () => null,
+            },
+            creation_limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for creation_limit
+                resolve: () => null,
+            },
+            limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit
+                resolve: () => null,
+            },
+            members: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ActivitiesMembersType),
+                // TODO: Implement resolver for members
+                resolve: () => null,
+            },
+            activities: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ActivitiesType),
+                // TODO: Implement resolver for activities
+                resolve: () => null,
+            },
+            image_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for image_url
+                resolve: () => null,
+            },
+            policy_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for policy_url
+                resolve: () => null,
+            },
+            privacy: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(PrivacyType),
+                // TODO: Implement resolver for privacy
+                resolve: () => null,
+            },
+            emailregexp: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for emailregexp
+                resolve: () => null,
+            },
+            minimum_age: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for minimum_age
+                resolve: () => null,
+            },
+            maximum_age: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for maximum_age
+                resolve: () => null,
+            },
+            recipients_for_message: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for recipients_for_message
+                resolve: () => null,
+            },
+            activated: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(UsersActivatedType),
+                // TODO: Implement resolver for activated
+                resolve: () => null,
+            },
+            users: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(UsersType),
+                // TODO: Implement resolver for users
+                resolve: () => null,
+            },
+            bcc: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bcc
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            html: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for html
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            html: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for html
+                resolve: () => null,
+            },
+            text: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for text
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(TeacherBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            bcc: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bcc
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailTeacherType),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            html: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for html
+                resolve: () => null,
+            },
+            text: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for text
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(StudentBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            bcc: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bcc
+                resolve: () => null,
+            },
+            student: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailStudentType),
+                // TODO: Implement resolver for student
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            html: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for html
+                resolve: () => null,
+            },
+            text: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for text
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ParentBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            bcc: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bcc
+                resolve: () => null,
+            },
+            parent: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailParentType),
+                // TODO: Implement resolver for parent
+                resolve: () => null,
+            },
+            email: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingEmailType),
+                // TODO: Implement resolver for email
+                resolve: () => null,
+            },
+            postpone_invite_banner_for: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for postpone_invite_banner_for
+                resolve: () => null,
+            },
+            student: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student
+                resolve: () => null,
+            },
+            student_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student_url
+                resolve: () => null,
+            },
+            parent: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent
+                resolve: () => null,
+            },
+            parent_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent_url
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            teacher_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher_url
+                resolve: () => null,
+            },
+            facebook: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingFacebookType),
+                // TODO: Implement resolver for facebook
+                resolve: () => null,
+            },
+            student: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student
+                resolve: () => null,
+            },
+            parent: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            twitter: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingTwitterType),
+                // TODO: Implement resolver for twitter
+                resolve: () => null,
+            },
+            image: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for image
+                resolve: () => null,
+            },
+            student: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student
+                resolve: () => null,
+            },
+            student_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student_url
+                resolve: () => null,
+            },
+            parent: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent
+                resolve: () => null,
+            },
+            parent_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent_url
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            teacher_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher_url
+                resolve: () => null,
+            },
+            pinterest: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingPinterestType),
+                // TODO: Implement resolver for pinterest
+                resolve: () => null,
+            },
+            student: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student
+                resolve: () => null,
+            },
+            parent: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            sms: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingSmsType),
+                // TODO: Implement resolver for sms
+                resolve: () => null,
+            },
+            student: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for student
+                resolve: () => null,
+            },
+            parent: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for parent
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            whatsapp: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingWhatsappType),
+                // TODO: Implement resolver for whatsapp
+                resolve: () => null,
+            },
+            sharing: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SharingType),
+                // TODO: Implement resolver for sharing
+                resolve: () => null,
+            },
+            bcc: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bcc
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            text: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for text
+                resolve: () => null,
+            },
+            html: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for html
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            text: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for text
+                resolve: () => null,
+            },
+            html: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for html
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(TeacherBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            bcc: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bcc
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailTeacherType),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            email: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(InviteEmailType),
+                // TODO: Implement resolver for email
+                resolve: () => null,
+            },
+            url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for url
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            facebook: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(InviteFacebookType),
+                // TODO: Implement resolver for facebook
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            twitter: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(InviteTwitterType),
+                // TODO: Implement resolver for twitter
+                resolve: () => null,
+            },
+            teacher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for teacher
+                resolve: () => null,
+            },
+            sms: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(InviteSmsType),
+                // TODO: Implement resolver for sms
+                resolve: () => null,
+            },
+            invite: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(InviteType),
+                // TODO: Implement resolver for invite
+                resolve: () => null,
+            },
+            limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit
+                resolve: () => null,
+            },
+            name_regex: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for name_regex
+                resolve: () => null,
+            },
+            owners_limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for owners_limit
+                resolve: () => null,
+            },
+            groups: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GroupsType),
+                // TODO: Implement resolver for groups
+                resolve: () => null,
+            },
+            limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit
+                resolve: () => null,
+            },
+            members: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ChatsMembersType),
+                // TODO: Implement resolver for members
+                resolve: () => null,
+            },
+            page_size: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for page_size
+                resolve: () => null,
+            },
+            recommended_page_size: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for recommended_page_size
+                resolve: () => null,
+            },
+            search: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ChatsSearchType),
+                // TODO: Implement resolver for search
+                resolve: () => null,
+            },
+            chats: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ChatsType),
+                // TODO: Implement resolver for chats
+                resolve: () => null,
+            },
+            min: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for min
+                resolve: () => null,
+            },
+            max: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for max
+                resolve: () => null,
+            },
+            amount_per_person: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(PaymentAmountPerPersonType),
+                // TODO: Implement resolver for amount_per_person
+                resolve: () => null,
+            },
+            publishable_key: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for publishable_key
+                resolve: () => null,
+            },
+            stripe: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(PaymentStripeType),
+                // TODO: Implement resolver for stripe
+                resolve: () => null,
+            },
+            payment: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(PaymentType),
+                // TODO: Implement resolver for payment
+                resolve: () => null,
+            },
+            long_limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for long_limit
+                resolve: () => null,
+            },
+            long_limit_with_files: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for long_limit_with_files
+                resolve: () => null,
+            },
+            preview_length: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for preview_length
+                resolve: () => null,
+            },
+            preview_link_length: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for preview_link_length
+                resolve: () => null,
+            },
+            soft_limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for soft_limit
+                resolve: () => null,
+            },
+            soft_limit_with_files: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for soft_limit_with_files
+                resolve: () => null,
+            },
+            limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit
+                resolve: () => null,
+            },
+            limit_with_files: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit_with_files
+                resolve: () => null,
+            },
+            limit_push_only: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit_push_only
+                resolve: () => null,
+            },
+            urlweight: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for urlweight
+                resolve: () => null,
+            },
+            stamp_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for stamp_url
+                resolve: () => null,
+            },
+            long_message_incentive_url: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for long_message_incentive_url
+                resolve: () => null,
+            },
+            urlregexp: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for urlregexp
+                resolve: () => null,
+            },
+            characters: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(MessagesCharactersType),
+                // TODO: Implement resolver for characters
+                resolve: () => null,
+            },
+            limit: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for limit
+                resolve: () => null,
+            },
+            files: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(MessagesFilesType),
+                // TODO: Implement resolver for files
+                resolve: () => null,
+            },
+            early: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for early
+                resolve: () => null,
+            },
+            late: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for late
+                resolve: () => null,
+            },
+            weekday: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(TimingWeekdayType),
+                // TODO: Implement resolver for weekday
+                resolve: () => null,
+            },
+            early: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for early
+                resolve: () => null,
+            },
+            late: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for late
+                resolve: () => null,
+            },
+            weekend: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(TimingWeekendType),
+                // TODO: Implement resolver for weekend
+                resolve: () => null,
+            },
+            timing: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(MessagesTimingType),
+                // TODO: Implement resolver for timing
+                resolve: () => null,
+            },
+            timeout: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for timeout
+                resolve: () => null,
+            },
+            messages: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(MessagesType),
+                // TODO: Implement resolver for messages
+                resolve: () => null,
+            },
+            supported_countries: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+                // TODO: Implement resolver for supported_countries
+                resolve: () => null,
+            },
+            real_time_invite_batch_period_days: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for real_time_invite_batch_period_days
+                resolve: () => null,
+            },
+            tymk: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(TymkType),
+                // TODO: Implement resolver for tymk
+                resolve: () => null,
+            },
+            unsupported_countries: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(null)),
+                // TODO: Implement resolver for unsupported_countries
+                resolve: () => null,
+            },
+            unsupported_emails: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(null)),
+                // TODO: Implement resolver for unsupported_emails
+                resolve: () => null,
+            },
+            unsupported_area_codes: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(null)),
+                // TODO: Implement resolver for unsupported_area_codes
+                resolve: () => null,
+            },
+            manual_invite: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ManualInviteType),
+                // TODO: Implement resolver for manual_invite
+                resolve: () => null,
+            },
+            unsupported_countries: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+                // TODO: Implement resolver for unsupported_countries
+                resolve: () => null,
+            },
+            unsupported_emails: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+                // TODO: Implement resolver for unsupported_emails
+                resolve: () => null,
+            },
+            unsupported_area_codes: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLInt)),
+                // TODO: Implement resolver for unsupported_area_codes
+                resolve: () => null,
+            },
+            direct_add: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(DirectAddType),
+                // TODO: Implement resolver for direct_add
+                resolve: () => null,
+            },
+            minimum_name_query_length: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for minimum_name_query_length
+                resolve: () => null,
+            },
+            allowed_country_codes: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+                // TODO: Implement resolver for allowed_country_codes
+                resolve: () => null,
+            },
+            picker: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(OrganizationsPickerType),
+                // TODO: Implement resolver for picker
+                resolve: () => null,
+            },
+            organizations: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(OrganizationsType),
+                // TODO: Implement resolver for organizations
+                resolve: () => null,
+            },
+            verification_timeout: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for verification_timeout
+                resolve: () => null,
+            },
+            sms: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(DevicesSmsType),
+                // TODO: Implement resolver for sms
+                resolve: () => null,
+            },
+            blacklisted_domains: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(GraphQLString)),
+                // TODO: Implement resolver for blacklisted_domains
+                resolve: () => null,
+            },
+            email: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(DevicesEmailType),
+                // TODO: Implement resolver for email
+                resolve: () => null,
+            },
+            devices: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(DevicesType),
+                // TODO: Implement resolver for devices
+                resolve: () => null,
+            },
+            name: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for name
+                resolve: () => null,
+            },
+            code: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for code
+                resolve: () => null,
+            },
+            countries: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(new GraphQLList(CountriesType)),
+                // TODO: Implement resolver for countries
+                resolve: () => null,
+            },
+            cluster: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for cluster
+                resolve: () => null,
+            },
+            key: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for key
+                resolve: () => null,
+            },
+            pusher: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(PusherType),
+                // TODO: Implement resolver for pusher
+                resolve: () => null,
+            },
+            min: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for min
+                resolve: () => null,
+            },
+            max: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for max
+                resolve: () => null,
+            },
+            length: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(Class_nameLengthType),
+                // TODO: Implement resolver for length
+                resolve: () => null,
+            },
+            class_name: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GroupClassNameType),
+                // TODO: Implement resolver for class_name
+                resolve: () => null,
+            },
+            min: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for min
+                resolve: () => null,
+            },
+            max: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLInt),
+                // TODO: Implement resolver for max
+                resolve: () => null,
+            },
+            length: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(NameLengthType),
+                // TODO: Implement resolver for length
+                resolve: () => null,
+            },
+            name: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GroupNameType),
+                // TODO: Implement resolver for name
+                resolve: () => null,
+            },
+            group: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GroupType),
+                // TODO: Implement resolver for group
+                resolve: () => null,
+            },
+            sms: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sms
+                resolve: () => null,
+            },
+            subject: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for subject
+                resolve: () => null,
+            },
+            text: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for text
+                resolve: () => null,
+            },
+            body: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(EmailBodyType),
+                // TODO: Implement resolver for body
+                resolve: () => null,
+            },
+            email: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(Signup_tutorialEmailType),
+                // TODO: Implement resolver for email
+                resolve: () => null,
+            },
+            signup_tutorial: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(SignupTutorialType),
+                // TODO: Implement resolver for signup_tutorial
+                resolve: () => null,
+            },
+            en: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for en
+                resolve: () => null,
+            },
+            es: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for es
+                resolve: () => null,
+            },
+            zh: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for zh
+                resolve: () => null,
+            },
+            fr: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for fr
+                resolve: () => null,
+            },
+            pt: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for pt
+                resolve: () => null,
+            },
+            primary: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(LanguagesPrimaryType),
+                // TODO: Implement resolver for primary
+                resolve: () => null,
+            },
+            af: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for af
+                resolve: () => null,
+            },
+            sq: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sq
+                resolve: () => null,
+            },
+            ar: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ar
+                resolve: () => null,
+            },
+            hy: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for hy
+                resolve: () => null,
+            },
+            az: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for az
+                resolve: () => null,
+            },
+            eu: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for eu
+                resolve: () => null,
+            },
+            be: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for be
+                resolve: () => null,
+            },
+            bn: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bn
+                resolve: () => null,
+            },
+            bs: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bs
+                resolve: () => null,
+            },
+            bg: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for bg
+                resolve: () => null,
+            },
+            ca: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ca
+                resolve: () => null,
+            },
+            ny: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ny
+                resolve: () => null,
+            },
+            zh: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for zh
+                resolve: () => null,
+            },
+            hr: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for hr
+                resolve: () => null,
+            },
+            cs: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for cs
+                resolve: () => null,
+            },
+            da: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for da
+                resolve: () => null,
+            },
+            nl: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for nl
+                resolve: () => null,
+            },
+            en: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for en
+                resolve: () => null,
+            },
+            eo: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for eo
+                resolve: () => null,
+            },
+            et: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for et
+                resolve: () => null,
+            },
+            tl: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for tl
+                resolve: () => null,
+            },
+            fi: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for fi
+                resolve: () => null,
+            },
+            fr: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for fr
+                resolve: () => null,
+            },
+            gl: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for gl
+                resolve: () => null,
+            },
+            ka: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ka
+                resolve: () => null,
+            },
+            de: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for de
+                resolve: () => null,
+            },
+            el: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for el
+                resolve: () => null,
+            },
+            gu: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for gu
+                resolve: () => null,
+            },
+            ht: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ht
+                resolve: () => null,
+            },
+            ha: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ha
+                resolve: () => null,
+            },
+            he: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for he
+                resolve: () => null,
+            },
+            hi: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for hi
+                resolve: () => null,
+            },
+            hu: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for hu
+                resolve: () => null,
+            },
+            is: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for is
+                resolve: () => null,
+            },
+            id: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLID),
+                // TODO: Implement resolver for id
+                resolve: () => null,
+            },
+            ga: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ga
+                resolve: () => null,
+            },
+            it: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for it
+                resolve: () => null,
+            },
+            ja: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ja
+                resolve: () => null,
+            },
+            jv: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for jv
+                resolve: () => null,
+            },
+            kn: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for kn
+                resolve: () => null,
+            },
+            kk: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for kk
+                resolve: () => null,
+            },
+            km: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for km
+                resolve: () => null,
+            },
+            ko: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ko
+                resolve: () => null,
+            },
+            la: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for la
+                resolve: () => null,
+            },
+            lo: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for lo
+                resolve: () => null,
+            },
+            lt: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for lt
+                resolve: () => null,
+            },
+            lv: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for lv
+                resolve: () => null,
+            },
+            mk: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for mk
+                resolve: () => null,
+            },
+            mg: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for mg
+                resolve: () => null,
+            },
+            ms: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ms
+                resolve: () => null,
+            },
+            ml: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ml
+                resolve: () => null,
+            },
+            mt: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for mt
+                resolve: () => null,
+            },
+            mi: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for mi
+                resolve: () => null,
+            },
+            mr: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for mr
+                resolve: () => null,
+            },
+            mn: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for mn
+                resolve: () => null,
+            },
+            ne: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ne
+                resolve: () => null,
+            },
+            no: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for no
+                resolve: () => null,
+            },
+            fa: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for fa
+                resolve: () => null,
+            },
+            pl: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for pl
+                resolve: () => null,
+            },
+            pt: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for pt
+                resolve: () => null,
+            },
+            ro: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ro
+                resolve: () => null,
+            },
+            ru: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ru
+                resolve: () => null,
+            },
+            sr: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sr
+                resolve: () => null,
+            },
+            si: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for si
+                resolve: () => null,
+            },
+            sk: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sk
+                resolve: () => null,
+            },
+            sl: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sl
+                resolve: () => null,
+            },
+            so: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for so
+                resolve: () => null,
+            },
+            es: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for es
+                resolve: () => null,
+            },
+            su: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for su
+                resolve: () => null,
+            },
+            sw: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sw
+                resolve: () => null,
+            },
+            sv: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for sv
+                resolve: () => null,
+            },
+            tg: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for tg
+                resolve: () => null,
+            },
+            ta: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ta
+                resolve: () => null,
+            },
+            te: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for te
+                resolve: () => null,
+            },
+            th: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for th
+                resolve: () => null,
+            },
+            tr: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for tr
+                resolve: () => null,
+            },
+            uk: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for uk
+                resolve: () => null,
+            },
+            ur: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for ur
+                resolve: () => null,
+            },
+            uz: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for uz
+                resolve: () => null,
+            },
+            vi: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for vi
+                resolve: () => null,
+            },
+            cy: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for cy
+                resolve: () => null,
+            },
+            yi: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for yi
+                resolve: () => null,
+            },
+            yo: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for yo
+                resolve: () => null,
+            },
+            zu: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for zu
+                resolve: () => null,
+            },
+            secondary: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(LanguagesSecondaryType),
+                // TODO: Implement resolver for secondary
+                resolve: () => null,
+            },
+            languages: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(LanguagesType),
+                // TODO: Implement resolver for languages
+                resolve: () => null,
+            },
+            activity_regex: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for activity_regex
+                resolve: () => null,
+            },
+            composer: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ComposerType),
+                // TODO: Implement resolver for composer
+                resolve: () => null,
+            },
+            batphone: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(GraphQLString),
+                // TODO: Implement resolver for batphone
+                resolve: () => null,
+            },
+            services: {
+                description: \'enter your description\',
+                type: new GraphQLNonNull(ServicesType),
+                // TODO: Implement resolver for services
+                resolve: () => null,
+            }
+        })
+    })
+})"
+`;
+
+exports[`graphql-ruby handles simple json 1`] = `
+"const {
+    GraphQLBoolean,
+    GraphQLString,
+    GraphQLInt,
+    GraphQLFloat,
+    GraphQLObjectType,
+    GraphQLSchema,
+    GraphQLID,
+    GraphQLNonNull
+} = require(\'graphql\')
+
+
+JobType = new GraphQLObjectType({
     name: \'job\',
     fields: {
         type: {

@@ -378,7 +378,7 @@ function resetGlobals(targetName: string) {
   fields = []
 }
 
-function createGraphQLSchema(json: Object | Array<Object>, targetName: string = 'graphqljs') {
+function createGraphQLSchema(json: Object | Array<Object>, targetName: string = 'graphql-js') {
   resetGlobals(targetName);
 
   const typeTokenAST = buildTypeTokenAST(json)

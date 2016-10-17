@@ -1390,20 +1390,30 @@ const hugeJson = {
 };
 
 describe('default', function() {
-	it('targets graphqljs', function() {
+	it('targets graphql-js', function() {
 		const json = simpleJson;
 		const defaultOutput = createSchemaFromJSON(json);
-		const graphqljsOutput = createSchemaFromJSON(json, 'graphqljs');
-		expect(defaultOutput).toEqual(graphqljsOutput);
+		const jsOutput = createSchemaFromJSON(json, 'graphql-js');
+		expect(defaultOutput).toEqual(jsOutput);
 	});
 });
 
-describe('graphqljs', function() {
+describe('graphql-js', function() {
 	it('handles simple json', function() {
-		expect(createSchemaFromJSON(simpleJson, 'graphqljs')).toMatchSnapshot();
+		expect(createSchemaFromJSON(simpleJson, 'graphql-js')).toMatchSnapshot();
 	});
 
 	it('handles huge json', function() {
-		expect(createSchemaFromJSON(hugeJson, 'graphqljs')).toMatchSnapshot();
+		expect(createSchemaFromJSON(hugeJson, 'graphql-js')).toMatchSnapshot();
 	});
+});
+
+describe('graphql-ruby', function() {
+  it('handles simple json', function() {
+    expect(createSchemaFromJSON(simpleJson, 'graphql-ruby')).toMatchSnapshot();
+  });
+
+  it('handles huge json', function() {
+    expect(createSchemaFromJSON(hugeJson, 'graphql-ruby')).toMatchSnapshot();
+  });
 });
