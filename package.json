@@ -18,9 +18,9 @@
     "babel-plugin-transform-flow-strip-types": "^6.8.0",
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
-    "flow-bin": "^0.26.0",
-    "graphql": "^0.6.0",
-    "mocha": "^2.5.3"
+    "flow-bin": "^0.33.0",
+    "graphql": "^0.7.2",
+    "mocha": "^3.1.2"
   },
   "dependencies": {
     "invariant": "^2.2.1",
